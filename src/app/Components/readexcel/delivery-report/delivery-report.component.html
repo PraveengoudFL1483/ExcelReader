@@ -1,0 +1,31 @@
+
+<div class="container-fluid">
+    <div class="jumbotron">
+        <h3>Delivery Report.</h3>
+    <div class="card text-center">
+       
+        <div class="card-header">
+           
+        </div>
+        <div class="card-body">
+         <div *ngIf="!isExport">
+            <h4 class="card-title">Please Upload file</h4><br>
+            <input type="file"  class="btn btn-primary"  (change)="onFileChange($event,'firstone')"
+            data-toggle="tooltip" data-placement="bottom" title="Please Select single file">  
+        </div>
+         <div *ngIf="isExport">
+            <div class="btn-group">
+                <button type="button" class="btn btn-success" (click)="ExporttoExcel()">Download</button>
+            </div>
+            </div>
+          
+        </div>
+        <div class="card-footer text-muted">
+        </div>
+      </div>
+    </div>
+
+</div>
+
+
+

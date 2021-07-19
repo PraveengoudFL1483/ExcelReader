@@ -1,0 +1,43 @@
+
+<div class="container-fluid">
+    <div class="jumbotron">
+        <h3>Sprint Report</h3>
+    <div class="card text-center">
+        <div class="card-header">
+          
+        </div>
+        <div class="card-body">
+         <div *ngIf="!isSprint">
+            <h4 class="card-title">Please Upload Platform file</h4><br>
+            <input type="file"  class="btn btn-primary"  (change)="onFileChange($event,'firstone')"
+            data-toggle="tooltip" data-placement="bottom" title="Please Select single file">  
+        </div>
+         <div *ngIf="isSprint && !isExport">
+            <h4>Please Upload Sprintplan file</h4><br>
+            <input type="file" class="btn btn-primary" (change)="onFileChangesprint($event)"
+            data-toggle="tooltip" data-placement="bottom" title="Please Select single file" placeholder="file"> 
+           
+         </div>
+         <div *ngIf="isExport">
+            <h3>Please Download Excel File</h3><br>
+            <p class="card-text">
+                <b>The Excel File will contain 3 sheets
+                    TempoLogs,
+                    PivotTable,
+                    PlanVsDelivered</b>     
+            </p>
+            <div class="btn-group">
+                <button type="button" class="btn btn-success" (click)="ExporttoExcel()">Download</button>
+               <!--  <button type="button" class="btn btn-primary" (click)="reloadPage()">Back</button> -->
+            
+            </div>
+            </div>
+          
+        </div>
+        <div class="card-footer text-muted">
+        </div>
+      </div>
+    </div>
+
+</div>
+

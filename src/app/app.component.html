@@ -1,0 +1,29 @@
+<div>
+    <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+        <div class="collapse navbar-collapse" id="collapsibleNavId">
+            <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                <li class="nav-item ">
+                    <a routerLink="/reader" [routerLinkActive]="['active']" class="nav-link"
+                    [ngClass]="{'active': tasksActive.isActive}"> Sprint Report </a>
+
+                    <a [routerLink]="['/']" routerLinkActive #tasksActive="routerLinkActive"
+                        [routerLinkActiveOptions]="{ exact: true }"
+                        style="display: none">
+                    </a>
+                </li>
+                <li class="nav-item ">
+                    <a routerLink="/deliveryreport" [routerLinkActive]="['active']" class="nav-link"
+                        [routerLinkActiveOptions]="{exact: true}"> Delivery Report
+                    </a>
+                </li>
+                <span style="float: right;">
+                    <p>V2</p>
+                </span>
+                
+              
+            </ul>
+        </div>
+    </nav>
+</div>
+
+<router-outlet></router-outlet>
